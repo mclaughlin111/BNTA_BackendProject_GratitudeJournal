@@ -6,13 +6,13 @@
 
 * Display all journal entries - `"/journal-entries"`
 
-* Include optional request param to display by journal entry ID - `"/{id}"`
-* Response entity returns a List of all journal entries back to the user.
+* Include optional path variable to display by journal entry ID - `"/{id}"`
+* Response entity returns a List of all journal entries back to the user, or specific journal by ID.
 * Return `HTTPStatus.OK`
 
 ### POST Mapping
 
-* Include request body. Use a UserDTO to get the UserId- 
+* Include request body. Use a EntryDTO to get the UserId- 
 	* `"userId" = 1,`
 	* `"content" = "I am grateful.",`
 	* `"weekDay" = "Monday",`
