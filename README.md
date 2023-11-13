@@ -1,7 +1,9 @@
 **Gratitude Journal**
-Class Diagram
-![classDiagram](https://github.com/mclaughlin111/BNTA_BackendProject_GratitudeJournal/assets/47330113/46dfcdc3-ef6c-4a98-ac51-e10e1cb1ef7d)
-Entity Relationship Diagram
-![ERD](https://github.com/mclaughlin111/BNTA_BackendProject_GratitudeJournal/assets/47330113/8d4c41e2-d2e6-4fc6-99b6-80f05af96b5e)
+**Class** Diagram
+![ClassDiagram](https://github.com/mclaughlin111/BNTA_BackendProject_GratitudeJournal/assets/47330113/e12a3ed9-67cb-4444-bb55-e81320860e70)
+
+**Entity Relationship** Diagram
+![ERD_Diagram](https://github.com/mclaughlin111/BNTA_BackendProject_GratitudeJournal/assets/47330113/c7c5e2df-315e-4325-a127-0cc33de2c833)
+
 
 
