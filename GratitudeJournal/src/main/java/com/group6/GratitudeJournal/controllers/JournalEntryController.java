@@ -44,7 +44,7 @@ public class JournalEntryController {
     public ResponseEntity<JournalEntry> addNewJournalEntry(@PathVariable long id, @RequestBody JournalEntry journalEntry){
 //        do we need to access through service layer?
         User foundUser = userService.getUserById(id);
-        JournalEntry newJournalEntry = journalEntryService.addNewJournalEntry(journalEntry);
+//        JournalEntry newJournalEntry = journalEntryService.addNewJournalEntry(journalEntry);
         foundUser.addJournalEntry(journalEntry);
         return new ResponseEntity<>(journalEntry, HttpStatus.CREATED);
     }
