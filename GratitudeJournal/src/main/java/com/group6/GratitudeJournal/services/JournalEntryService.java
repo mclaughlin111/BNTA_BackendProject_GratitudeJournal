@@ -52,5 +52,11 @@ public class JournalEntryService {
         journalEntryRepository.deleteById(id);
     }
 
+//    update journal entry
+//    public void updateJournalEntry(JournalEntry journalEntry){
+//        JournalEntry journalEntry = journalEntry
+//        journalEntry.setContent();
+//    }
+
 
 }

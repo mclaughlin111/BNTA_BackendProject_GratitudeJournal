@@ -3,6 +3,7 @@ package com.group6.GratitudeJournal.controllers;
 import com.group6.GratitudeJournal.models.JournalEntry;
 import com.group6.GratitudeJournal.models.User;
 import com.group6.GratitudeJournal.models.UserDTO;
+import com.group6.GratitudeJournal.repositories.JournalEntryRepository;
 import com.group6.GratitudeJournal.services.JournalEntryService;
 import com.group6.GratitudeJournal.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class JournalEntryController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    JournalEntryRepository journalEntryRepository;
 
 
     //find all - tested ✅
@@ -46,6 +50,16 @@ public class JournalEntryController {
         foundUser.addJournalEntry(journalEntry);
         return new ResponseEntity<>(journalEntry, HttpStatus.CREATED);
     }
+
+    @PatchMapping(value = "/{id}") // to update individual parameters
+    public ResponseEntity<JournalEntry> updateJournalEntry(@PathVariable long id, @RequestBody String updatedContent){
+        JournalEntry foundJournalEntry = journalEntryService.findEntryById(id);
+        foundJournalEntry.setContent(updatedContent);
+        journalEntryRepository.save(foundJournalEntry);
+        return new ResponseEntity<>(foundJournalEntry, HttpStatus.OK);
+    }
+
+//    @PutMapping // to fully update
 
 
 
