@@ -58,5 +58,9 @@ public class JournalEntryService {
 //        journalEntry.setContent();
 //    }
 
+//    method to work out which parameter updating
+
+    public
+
 
 }
