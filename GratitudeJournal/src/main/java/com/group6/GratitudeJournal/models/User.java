@@ -1,14 +1,18 @@
 package com.group6.GratitudeJournal.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
+
 //@Table(name = "users")
 @Entity(name = "users") // CHECK difference in @Table vs @Entity!
+@Table
 public class User {
 
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY) // @Column needed here?
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // @Column needed here?
     private long id;
 
     @Column(name = "name")
@@ -17,16 +21,18 @@ public class User {
     @Column(name = "emailAddress")
     private String emailAddress;
 
-    @Column(name = "journalEntries")
-    ArrayList <JournalEntry> journalEntries;
+    @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties({"user"})
+    List<JournalEntry> journalEntries;
 
-    public User( String name, String emailAddress) {
+    public User(String name, String emailAddress) {
         this.name = name;
         this.emailAddress = emailAddress;
         this.journalEntries = new ArrayList<>();
     }
 
-    public User (){}
+    public User() {
+    }
 
     public long getId() {
         return id;
@@ -52,11 +58,11 @@ public class User {
         this.emailAddress = emailAddress;
     }
 
-    public ArrayList<JournalEntry> getJournalEntries() {
+    public List<JournalEntry> getJournalEntries() {
         return journalEntries;
     }
 
-    public void setJournalEntries(ArrayList<JournalEntry> journalEntries) {
+    public void setJournalEntries(List<JournalEntry> journalEntries) {
         this.journalEntries = journalEntries;
     }
 }

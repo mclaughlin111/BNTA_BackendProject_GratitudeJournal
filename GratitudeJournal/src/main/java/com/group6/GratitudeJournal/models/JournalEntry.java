@@ -5,13 +5,15 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity(name = "journal_entries")
+@Table
 public class JournalEntry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long entryId;
 //    userId
-    @Column(name = "user")
+    @ManyToOne
+    @JoinColumn(name = "user_id")  // do we require:' nullable = false' to be included in brackets?
     private User user;
 //    private LocalDate dateAndTime;
     @Column(name = "content")

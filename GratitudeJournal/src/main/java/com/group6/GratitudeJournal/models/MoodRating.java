@@ -8,7 +8,11 @@ public enum MoodRating {
     POSITIVE(4),
     REALLYGOOD(5);
 
-    int rating;
+    private int rating;
+
+    public int getRating() {
+        return rating;
+    }
 
     MoodRating(int rating){
         this.rating = rating;
