@@ -1,5 +1,6 @@
 package com.group6.GratitudeJournal.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ public class JournalEntry {
 //    userId
     @ManyToOne
     @JoinColumn(name = "user_id")  // do we require:' nullable = false' to be included in brackets?
+    @JsonIgnoreProperties({"journalEntries"}) // ignores other journal entries, when looking for entry by specific Id
     private User user;
 //    private LocalDate dateAndTime;
     @Column(name = "content")

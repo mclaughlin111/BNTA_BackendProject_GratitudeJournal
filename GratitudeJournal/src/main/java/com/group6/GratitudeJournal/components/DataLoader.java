@@ -37,8 +37,13 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(user);
         //does this method need to be in the service?
 
-        JournalEntry journalEntry = new JournalEntry(user, "I had a great day today", WeekDay.FRIDAY, MoodRating.REALLYGOOD);
-        journalEntryRepository.save(journalEntry);
+        JournalEntry journalEntry1 = new JournalEntry(user, "I had a great day today", WeekDay.FRIDAY, MoodRating.REALLYGOOD);
+        journalEntryRepository.save(journalEntry1);
+
+        JournalEntry journalEntry2 = new JournalEntry(user, "I had an okay day", WeekDay.MONDAY, MoodRating.INDIFFERENT);
+        journalEntryRepository.save(journalEntry2);
+
+
     }
 
 }

@@ -65,4 +65,8 @@ public class User {
     public void setJournalEntries(List<JournalEntry> journalEntries) {
         this.journalEntries = journalEntries;
     }
+
+    public void addJournalEntry(JournalEntry journalEntry){
+        this.journalEntries.add(journalEntry);
+    }
 }
