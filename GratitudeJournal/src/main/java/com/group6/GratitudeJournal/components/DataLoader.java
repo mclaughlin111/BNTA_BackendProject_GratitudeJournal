@@ -33,14 +33,16 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {   //check why we use this?
 
-        User user = new User("Billie", "billie@bnta.com");
+        User user = new User("Billie", "billieredwood@gmail.com");
         userRepository.save(user);
-        User user2 = new User("Tom", "toma@bnta.com");
+        User user2 = new User("Tom", "mail@tommcl.co.uk");
         userRepository.save(user2);
-        User user3 = new User("Mehlia","mehlia@bnta.com");
+        User user3 = new User("Mehlia","mehliarahman@gmail.com");
         userRepository.save(user3);
-        User user4 = new User("Joe","joe@bnta.com");
+        User user4 = new User("Joe","joecarpentieri1@gmail.com");
         userRepository.save(user4);
+        User user5 = new User("Rashad","rashad.ramali@hotmail.co.uk");
+        userRepository.save(user5);
         //does this method need to be in the service?
 
         JournalEntry journalEntry1 = new JournalEntry(user, "I had a great day today", WeekDay.FRIDAY, MoodRating.REALLYGOOD);
