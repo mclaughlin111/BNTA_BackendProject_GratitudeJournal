@@ -1,17 +1,25 @@
-## G6 - Backend Project:
-
-# ⭐️ Gratitude Journal To-Do List 
-# Documentation:
+## Group 6 "Gratitude Gangstaz" Backend Project: ⭐️ Gratitude Journal To-Do List 
+### Documentation:
 
 ### About
-*description*
+*An application whose main function is to allow a user to record daily notes of gratitude and a rating of their mood*
 
-*collaborators*
+* *Mehlia Rahman*
+* *Billie Redwood*
+* *Rashad Ramali*
+* *Joseph Carpentieri*
+* *Thomas McLaughlin*
+
+
 
 ### The project's aims
 
 
 ### The names and versions of any libraries used
+* Spring Boto Starter Data JPA
+* Spring Boot Starter Web
+* Spring Boot devtools
+* Postgresql
 
 
 ### Step-by-step setup instructions
