@@ -1,7 +1,7 @@
 ## Group 6 "Gratitude Gangstaz" Backend Project: ⭐️ Gratitude Journal
-### Documentation:
+## Documentation:
 
-### About
+### About:
 *An application whose main function is to allow a user to record daily notes of gratitude and a rating of their mood*
 
 * *Mehlia Rahman*
@@ -11,8 +11,16 @@
 * *Thomas McLaughlin*
 
 
+## The Project's aims
+### For Users:
 
-### The project's aims
+* Implements habits of *reflection* and *appreciation* into a users daily routine.
+* Prompt users to *engage* with their mood and mental health in a *positive* and *wholesome* way.
+* Identify possible trends in a users lifestyle so feedback can be customised and tailored for each specific use case. 
+
+### For Developers:
+* Create code that is clearly written and well formatted to make it easy to work and extend upon. 
+* Code-base available on an open source basis to allow for easier development within wellbeing software space. 
 
 
 ### The names and versions of any libraries used
@@ -40,7 +48,6 @@
 - Examples of permitted requests where appropriate
 - Examples of responses
 - Routes should be organised by route and not by request method
-
 -
 
 
@@ -90,12 +97,9 @@
 **Entity Relationship** Diagram
 ![ERD_Diagram](https://github.com/mclaughlin111/BNTA_BackendProject_GratitudeJournal/assets/47330113/c7c5e2df-315e-4325-a127-0cc33de2c833)
 
--
 
 
-#RESTful Routes
-
-## JournalEntry Model
+## RESTful Routes: JournalEntry
 
 ### GET Mapping
 
@@ -104,6 +108,7 @@
 * Include optional path variable to display by journal entry ID - `"/{id}"`
 * Response entity returns a List of all journal entries back to the user, or specific journal by ID.
 * Return `HTTPStatus.OK`
+
 
 ### POST Mapping
 
@@ -131,4 +136,52 @@
 * Return `HTTPStatus.OK`
 
 
+###  Example Mappings:
+
+GET `localhost:8080/Users`
+
+*JSON RESPONSE*
+
+
+    {
+        "id": 1,
+        "name": "Billie",
+        "emailAddress": "billie@bnta.com"
+    },
+    {
+        "id": 2,
+        "name": "Tom",
+        "emailAddress": "toma@bnta.com"
+    },
+    {
+        "id": 3,
+        "name": "Mehlia",
+        "emailAddress": "mehlia@bnta.com"
+    },
+    {
+        "id": 4,
+        "name": "Joe",
+        "emailAddress": "joe@bnta.com"
+    }
+
+	
+
+GET `localhost:8080/Users/id`
+
+    {
+        "id": 1,
+        "name": "Billie",
+        "emailAddress": "billie@bnta.com"
+    }
+
+
+POST `localhost:8080/Users` RequestBody: `User`
+
+`{ "name" : "username" "emailAddress" : "emailaddress" }`
+  
+PATCH `localhost:8080/Users/id` RequestBody: `UserDTO`
+
+`{ "name" : "updated_username" "emailAddress" : "updated_emailaddress" }`
+
+DELETE `localhost:8080/Users/id`
 

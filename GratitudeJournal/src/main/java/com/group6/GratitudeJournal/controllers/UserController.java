@@ -24,6 +24,13 @@ public class UserController {
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
     }
 
+//    Find user by Id
+    @GetMapping(value = "/{id}")  // - tested ✅
+    public ResponseEntity<User> getUserById(@PathVariable long id){
+        User foundUser = userService.getUserById(id);
+        return new ResponseEntity<>(foundUser, HttpStatus.OK);
+    }
+
 //    create a user - tested ✅
     @PostMapping
     public ResponseEntity<User> addNewUser(@RequestBody User user){
