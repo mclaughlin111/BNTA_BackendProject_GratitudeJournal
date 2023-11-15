@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -58,19 +59,12 @@ public class JournalEntryController {
 //        return new ResponseEntity<>(foundJournalEntry, HttpStatus.OK);
 //    }
 
-//    patch for moodRating
+//  Update journal entry by User ID
+
     @PatchMapping(value = "/{id}") // pass journal entry obj?
-//    Assume all data entered in correct format as per front end (e.g., dropdown menu?)
-    public ResponseEntity<JournalEntry> updateJournalEntry(@PathVariable long id, @RequestParam(required = false) MoodRating moodRating, @RequestParam(required = false) String updatedContent, @RequestParam(required = false) WeekDay weekDay){
-        JournalEntry foundJournalEntry = journalEntryService.findEntryById(id);
-        foundJournalEntry.setMoodRating(moodRating); //
-        if (updatedContent != null){
-            foundJournalEntry.setContent(updatedContent);
-        }
-        if ()
-//        journalEntryRepository.save(foundJournalEntry);//NEEDS TO BE MOVED TO SERVICE - README - FOR FRONTEND NEEDS TO HAVE A DROPDOWN
-        journalEntryService.addNewJournalEntry(foundJournalEntry);
-        return new ResponseEntity<>(foundJournalEntry, HttpStatus.OK);
+    public ResponseEntity<JournalEntry> updateJournalEntry(@PathVariable long id, @RequestBody EntryDTO entryDTO) {
+        JournalEntry updatedJournalEntry = journalEntryService.updateJournalEntry(id, entryDTO);
+        return new ResponseEntity<>(updatedJournalEntry, HttpStatus.OK);
     }
 
 //    @PutMapping // to fully update
