@@ -51,7 +51,7 @@ public class JournalEntryController {
     }
 
 
-//  @PATCH Update journal entry by User ID
+//  @PATCH Update journal entry by Journal ID
 
     @PatchMapping(value = "/{id}") // - tested ✅ pass journal entry obj?
     public ResponseEntity<JournalEntry> updateJournalEntry(@PathVariable long id, @RequestBody EntryDTO entryDTO) {
@@ -59,7 +59,14 @@ public class JournalEntryController {
         return new ResponseEntity<>(updatedJournalEntry, HttpStatus.OK);
     }
 
-//    @PutMapping // to fully update
+
+//   @DELETE Delete journal entry by Journal ID
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity deleteJournalEntry(@PathVariable long id){
+        journalEntryService.deleteJournalEntry(id);
+        return new ResponseEntity(null,HttpStatus.NO_CONTENT);
+    }
 
 
 
