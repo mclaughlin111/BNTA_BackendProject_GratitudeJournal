@@ -35,13 +35,35 @@ public class DataLoader implements ApplicationRunner {
 
         User user = new User("Billie", "billie@bnta.com");
         userRepository.save(user);
+        User user2 = new User("Tom", "toma@bnta.com");
+        userRepository.save(user2);
+        User user3 = new User("Mehlia","mehlia@bnta.com");
+        userRepository.save(user3);
+        User user4 = new User("Joe","joe@bnta.com");
+        userRepository.save(user4);
         //does this method need to be in the service?
 
         JournalEntry journalEntry1 = new JournalEntry(user, "I had a great day today", WeekDay.FRIDAY, MoodRating.REALLYGOOD);
         journalEntryRepository.save(journalEntry1);
 
-        JournalEntry journalEntry2 = new JournalEntry(user, "I had an okay day", WeekDay.MONDAY, MoodRating.INDIFFERENT);
+        JournalEntry journalEntry2 = new JournalEntry(user2, "I had bad day", WeekDay.TUESDAY, MoodRating.REALLYBAD);
         journalEntryRepository.save(journalEntry2);
+
+        JournalEntry journalEntry3 = new JournalEntry(user2, "I had a good day", WeekDay.THURSDAY, MoodRating.POSITIVE);
+        journalEntryRepository.save(journalEntry3);
+
+        JournalEntry journalEntry4 = new JournalEntry(user3, "I had an average day", WeekDay.SUNDAY, MoodRating.INDIFFERENT);
+        journalEntryRepository.save(journalEntry4);
+
+        JournalEntry journalEntry5 = new JournalEntry(user4, "I had a mediocre day", WeekDay.MONDAY, MoodRating.NEGATIVE);
+        journalEntryRepository.save(journalEntry5);
+
+        JournalEntry journalEntry6 = new JournalEntry(user4, "I had a brilliant", WeekDay.FRIDAY, MoodRating.REALLYGOOD);
+        journalEntryRepository.save(journalEntry6);
+
+
+
+
 
 
     }

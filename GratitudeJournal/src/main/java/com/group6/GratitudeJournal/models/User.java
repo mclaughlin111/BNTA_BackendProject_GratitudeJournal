@@ -1,5 +1,6 @@
 package com.group6.GratitudeJournal.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
@@ -23,6 +24,7 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     @JsonIgnoreProperties({"user"})
+    @JsonIgnore
     List<JournalEntry> journalEntries;
 
     public User(String name, String emailAddress) {
@@ -57,6 +59,7 @@ public class User {
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
+
 
     public List<JournalEntry> getJournalEntries() {
         return journalEntries;
