@@ -6,9 +6,7 @@ import com.group6.GratitudeJournal.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,9 +18,16 @@ public class UserController {
     UserService userService;
 
 //    GET all users
-    @GetMapping
+    @GetMapping  // - tested ✅
     public ResponseEntity<List<User>> getAllUsers(){
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
+    }
+
+    //delete a user
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity deleteUser(@PathVariable long id){
+        userService.deleteUser(id);
+        return new ResponseEntity(null, HttpStatus.NO_CONTENT);
     }
 
 }
