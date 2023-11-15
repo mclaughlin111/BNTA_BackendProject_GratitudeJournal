@@ -43,25 +43,17 @@ public class JournalEntryController {
 //    add a new journal entry by user Id - tested ✅
     @PostMapping(value = "/{id}")
     public ResponseEntity<JournalEntry> addNewJournalEntry(@PathVariable long id, @RequestBody JournalEntry journalEntry){
-//        do we need to access through service layer?
+//        do we need to access through service layer? -- (YES WE DO)
         User foundUser = userService.getUserById(id);
 //        JournalEntry newJournalEntry = journalEntryService.addNewJournalEntry(journalEntry);
         foundUser.addJournalEntry(journalEntry);
         return new ResponseEntity<>(journalEntry, HttpStatus.CREATED);
     }
 
-    // patch for content - tested ✅
-//    @PatchMapping(value = "/{id}")
-//    public ResponseEntity<JournalEntry> updateJournalEntry(@PathVariable long id, @RequestBody String updatedContent){
-//        JournalEntry foundJournalEntry = journalEntryService.findEntryById(id);
-//        foundJournalEntry.setContent(updatedContent);
-//        journalEntryRepository.save(foundJournalEntry);
-//        return new ResponseEntity<>(foundJournalEntry, HttpStatus.OK);
-//    }
 
-//  Update journal entry by User ID
+//  @PATCH Update journal entry by User ID
 
-    @PatchMapping(value = "/{id}") // pass journal entry obj?
+    @PatchMapping(value = "/{id}") // - tested ✅ pass journal entry obj?
     public ResponseEntity<JournalEntry> updateJournalEntry(@PathVariable long id, @RequestBody EntryDTO entryDTO) {
         JournalEntry updatedJournalEntry = journalEntryService.updateJournalEntry(id, entryDTO);
         return new ResponseEntity<>(updatedJournalEntry, HttpStatus.OK);
