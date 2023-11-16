@@ -12,7 +12,7 @@ public class JournalEntry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long entryId;
+    private long id;
 //    userId
     @ManyToOne
     @JoinColumn(name = "user_id")  // do we require:' nullable = false' to be included in brackets?
@@ -41,12 +41,12 @@ public class JournalEntry {
     public JournalEntry(){
     }
 
-    public long getEntryId() {
-        return entryId;
+    public long getId() {
+        return id;
     }
 
-    public void setEntryId(long entryId) {
-        this.entryId = entryId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public User getUser() {

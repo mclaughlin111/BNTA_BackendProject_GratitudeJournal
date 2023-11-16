@@ -7,6 +7,8 @@ import com.group6.GratitudeJournal.models.User;
 import com.group6.GratitudeJournal.repositories.JournalEntryRepository;
 import com.group6.GratitudeJournal.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,6 +22,9 @@ public class JournalEntryService {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    UserService userService;
 
 
     //  find all
@@ -41,10 +46,18 @@ public class JournalEntryService {
     }
 
     //    add new journal entry
-    public JournalEntry addNewJournalEntry(JournalEntry journalEntry) { //make it void?
-        journalEntryRepository.save(journalEntry);
-        return journalEntry;
+    public boolean addNewJournalEntry(long id, JournalEntry journalEntry) { //make it void?
+        User foundUser = userService.getUserById(id);
+        List<JournalEntry> entryCount = journalEntryRepository.findByWeekDayAndUserId(journalEntry.getWeekDay(), foundUser.getId());
 
+        if (entryCount.size() < 5){
+            journalEntry.setUser(foundUser);
+            journalEntryRepository.save(journalEntry);
+            return true;
+
+        } else {
+            return false;
+        }
     }
 
     //    delete journal entry

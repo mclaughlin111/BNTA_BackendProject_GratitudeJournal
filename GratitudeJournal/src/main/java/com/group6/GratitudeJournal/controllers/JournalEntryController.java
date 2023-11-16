@@ -43,11 +43,12 @@ public class JournalEntryController {
 //    add a new journal entry by user Id - tested ✅
     @PostMapping(value = "/{id}")
     public ResponseEntity<JournalEntry> addNewJournalEntry(@PathVariable long id, @RequestBody JournalEntry journalEntry){
-//        do we need to access through service layer? -- (YES WE DO)
-        User foundUser = userService.getUserById(id);
-//        JournalEntry newJournalEntry = journalEntryService.addNewJournalEntry(journalEntry);
-        foundUser.addJournalEntry(journalEntry);
-        return new ResponseEntity<>(journalEntry, HttpStatus.CREATED);
+        journalEntryService.addNewJournalEntry(id, journalEntry);
+        if (journalEntryService.addNewJournalEntry(id, journalEntry)) {
+            return new ResponseEntity<>(journalEntry, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
     }
 
 
