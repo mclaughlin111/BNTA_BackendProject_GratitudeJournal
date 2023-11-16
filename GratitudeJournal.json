@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "f7088957-6a33-4c0b-9068-b33ae25ff218",
+		"name": "⭐️GratitudeJournal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30165097"
+	},
+	"item": [
+		{
+			"name": "JournalEntry Mappings",
+			"item": [
+				{
+					"name": "Create entries",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get entries",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/journal-entries/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Entry",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n\"content\": \"I had a beaut day\",\n\"weekDay\": \"WEDNESDAY\",\n\"moodRating\": \"POSITIVE\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/journal-entries/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Mappings",
+			"item": [
+				{
+					"name": "All Users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "User by ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotes",
+			"item": [
+				{
+					"name": "Email by UserID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
