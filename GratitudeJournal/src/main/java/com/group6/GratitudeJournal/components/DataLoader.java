@@ -43,6 +43,8 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(user4);
         User user5 = new User("Rashad","rashad.ramali@hotmail.co.uk");
         userRepository.save(user5);
+        User user6 = new User("Zsolt", "zsolt@brightnetwork.co.uk");
+        userRepository.save(user6);
         //does this method need to be in the service?
 
         JournalEntry journalEntry1 = new JournalEntry(user, "I had a great day today", WeekDay.FRIDAY, MoodRating.REALLYGOOD);
