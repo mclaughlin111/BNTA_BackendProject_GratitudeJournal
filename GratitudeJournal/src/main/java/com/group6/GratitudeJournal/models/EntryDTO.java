@@ -2,11 +2,11 @@ package com.group6.GratitudeJournal.models;
 
 public class EntryDTO {
 
-    private String content;
+    private Content content;
     private MoodRating moodRating;
     private WeekDay weekDay;
 
-    public EntryDTO(String content, MoodRating moodRating, WeekDay weekDay) {
+    public EntryDTO(Content content, MoodRating moodRating, WeekDay weekDay) {
         this.content = content;
         this.moodRating = moodRating;
         this.weekDay = weekDay;
@@ -14,11 +14,11 @@ public class EntryDTO {
     public EntryDTO() {
     }
 
-    public String getContent() {
+    public Content getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(Content content) {
         this.content = content;
     }
 

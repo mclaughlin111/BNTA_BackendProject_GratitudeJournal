@@ -21,7 +21,7 @@ public class JournalEntry {
     private User user;
 //    private LocalDate dateAndTime;
     @Column(name = "content")
-    private String content;
+    private Content content;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "week_day")
@@ -31,7 +31,7 @@ public class JournalEntry {
     @Column(name = "mood_rating")
     private MoodRating moodRating;
 
-    public JournalEntry(User user, String content, WeekDay weekDay, MoodRating moodRating) {
+    public JournalEntry(User user, Content content, WeekDay weekDay, MoodRating moodRating) {
         this.user = user;
         this.content = content;
         this.weekDay = weekDay;
@@ -57,11 +57,11 @@ public class JournalEntry {
         this.user = user;
     }
 
-    public String getContent() {
+    public Content getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(Content content) {
         this.content = content;
     }
 
