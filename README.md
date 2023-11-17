@@ -249,4 +249,6 @@ DELETE `localhost:8080/journal-entries/id`
 * Response entity returns JournalEntry ID that we deleted.
 * Return `HTTPStatus.OK`
 
---
+-
+![group 6](https://github.com/mclaughlin111/BNTA_BackendProject_GratitudeJournal/assets/47330113/5b4ed22c-a2aa-4d2f-b4c7-1bfa114038bb)
+
