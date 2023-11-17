@@ -38,7 +38,7 @@
 3. Check dependencies for spring dependencies specified above in pom.xml - if not installed it will not run correctly.
 4. Create a postgreql database called gratitude_journal in terminal.
 5. Run GratitudeJournal.java application.
-6. Test mapping routes in API server of choice ([Click here](https://github.com/mclaughlin111/BNTA_BackendProject_GratitudeJournal/blob/main/GratitudeJournalAPI.postman_collection.json) to download our pre-mapped Postman Collection to test routes). 
+6. Test mapping routes in API server of choice ([Click here](https://github.com/mclaughlin111/BNTA_BackendProject_GratitudeJournal/blob/main/GratitudeJournal.json) to download our pre-mapped Postman Collection to test routes). 
 
 
 
@@ -74,7 +74,7 @@
 ## Extension IV - Reward Streaks & User Incentive
 * Create a database of motiviational quotes
 * Write a method that returns a motivational quote to a user on a random basis
-	* Send message directly to a users email address
+	* Send Email message directly to a users email address✅
 	* extend method to only send motivational quotes to users below a certain MoodRating or below a specific `JournalEntry` average 
 * Create a 'Streak' system that rewards users for continued daily usage at certain milestones (i.e. 3 days, 1 week, 1 month) with a virtual ⭐️ point system.
 
@@ -248,3 +248,5 @@ DELETE `localhost:8080/journal-entries/id`
 * Include path variable to select JournalEntry ID that we want to delete - `"/{id}`.
 * Response entity returns JournalEntry ID that we deleted.
 * Return `HTTPStatus.OK`
+
+--
