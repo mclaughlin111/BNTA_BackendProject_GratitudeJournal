@@ -1,4 +1,4 @@
-# Group 6 "Gratitude Gangstaz" Backend Project: ⭐️ Gratitude Journal
+# Group 6 Backend Project: ⭐️ Gratitude Journal
 
 ## About:
 An application whose main function is to allow a user to record daily notes of gratitude and a rating of their mood.
